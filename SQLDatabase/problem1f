@@ -1,0 +1,7 @@
+SELECT docid
+FROM frequency
+WHERE term == "transactions" AND count >= 1
+INTERSECT
+SELECT docid
+FROM frequency
+WHERE term == "world" AND count >= 1;

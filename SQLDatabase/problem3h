@@ -1,0 +1,6 @@
+SELECT SUM(a.count*b.count) FROM (
+    SELECT * FROM frequency
+    WHERE docid == "17035_txt_earn") AS a, (
+    SELECT * FROM frequency
+    WHERE docid == "10080_txt_crude") AS b
+WHERE a.term == b.term;

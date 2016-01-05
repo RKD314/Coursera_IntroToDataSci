@@ -1,0 +1,11 @@
+SELECT a.docid, a.count*b.count FROM frequency AS a, (
+    SELECT * FROM frequency
+    WHERE docid == "q"
+    UNION
+    SELECT 'q' as docid, 'washington' as term, 1 as count 
+    UNION
+    SELECT 'q' as docid, 'taxes' as term, 1 as count
+    UNION 
+    SELECT 'q' as docid, 'treasury' as term, 1 as count) AS b
+WHERE a.term == b.term
+GROUP BY a.docid;

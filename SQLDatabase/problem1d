@@ -1,0 +1,3 @@
+SELECT docid
+FROM frequency
+WHERE term == "parliament" AND count >= 1;
